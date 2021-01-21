@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 1</title>
+</head>
+
+<body>
+<script>
+'use strict';
+//Задача 1. Задать температуру в градусах по Цельсию.
+//Вывести в alert соответствующую температуру в градусах по Фаренгейту.
+//Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32,
+//где Tf – температура по Фаренгейту, Tc – температура по Цельсию
+let Tc = 29;
+let Tf = (9 / 5) * Tc + 32;
+
+alert(Tc + " градусов по Цельсию = " + Tf + " градусам по Фаренгейту")
+//console.log(Tf);
+
+//Задача 2. Объявить две переменные: admin и name. Записать в name строку "Василий";
+//Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).
+
+let name = 'Василий';
+let admin = name;
+
+document.body.innerHTML = admin;
+//console.log(admin);
+</script>
+</body>
+
+</html>
