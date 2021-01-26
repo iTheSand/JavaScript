@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+</head>
+<body>
+<script>
+    'use strict';
+    // Задача 1. Почему код дает именно такие результаты?
+    // var a = 1, b = 1, c, d;
+    // c = ++a; alert(c);           // 2
+    // d = b++; alert(d);           // 1
+    // c = (2+ ++a); alert(c);      // 5
+    // d = (2+ b++); alert(d);      // 4
+    // alert(a);                    // 3
+    // alert(b);                    // 3
+    // Префиксная форма инкрементирования сразу возвращает обновленное значение.
+    // Постфиксная форма сначала возвращает старое значение, затем обновляет его.
+
+    // Задача 2. Чему будет равен х?
+    // var a = 2;
+    // var x = 1 + (a *= 2);
+    // console.log (x)
+    // x = 5. Совмещенные операторы позволяют получить более короткую форму записи.
+    // В данном случае убиваем двух зайцев, обновляем значение переменной 'a' и используем новое значение.
+
+    // Задача 3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения.
+    // Затем написать скрипт, который работает по следующему принципу:
+    // если a и b положительные, вывести их разность;
+    // если а и b отрицательные, вывести их произведение;
+    // если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+
+    var a = 5, b = 2;
+
+    if (a >= 0 && b >= 0) {
+        if (a > b) {
+        console.log (a - b);
+        }
+        else {
+        console.log (b - a);
+        }
+    }
+    else if (a < 0 && b < 0) {
+        console.log (a * b);
+    }
+    else {
+        console.log (a + b);
+    }
+
+    // Задача 4. Присвоить переменной а значение в промежутке [0..15].
+    // С помощью оператора switch организовать вывод чисел от a до 15.
+
+    var a = 20;
+
+    switch (a) {
+        case 0:
+        console.log(a++);
+        case 1:
+        console.log(a++);
+        case 2:
+        console.log(a++);
+        case 3:
+        console.log(a++);
+        case 4:
+        console.log(a++);
+        case 5:
+        console.log(a++);
+        case 6:
+        console.log(a++);
+        case 7:
+        console.log(a++);
+        case 8:
+        console.log(a++);
+        case 9:
+        console.log(a++);
+        case 10:
+        console.log(a++);
+        case 11:
+        console.log(a++);
+        case 12:
+        console.log(a++);
+        case 13:
+        console.log(a++);
+        case 14:
+        console.log(a++);
+        case 15:
+        console.log(a++);
+        default:
+        console.log("Значение переменной 'а' должно быть в промежутке [0..15]");
+    }
+
+    // Задача 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+    // Обязательно использовать оператор return.
+
+    function sum(a, b) {
+        return a + b
+    }
+
+    function dif(a, b) {
+        return a - b
+    }
+
+    function pro(a, b) {
+        return a * b
+    }
+
+    function quo(a, b) {
+        return a / b
+    }
+
+    // Задача 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+    // где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+    // В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5)
+    // и вернуть полученное значение (использовать switch).
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+        case '+':
+        return sum (arg1, arg2);
+        break;
+        case '-':
+        return dif (arg1, arg2);
+        break;
+        case '*':
+        return pro (arg1, arg2);
+        break;
+        case '/':
+        return quo (arg1, arg2);
+        break;
+        }
+    }
+    console.log(mathOperation(2, 3, '*'))
+
+    // Задача 7. Сравнить null и 0. Попробуйте объяснить результат.
+    console.log(null > 0);    //false
+    console.log(null < 0);    //false
+    console.log(null <= 0);   //true
+    console.log(null <= 0);   //true
+    console.log(null == 0);   //false
+    console.log(null === 0);  //false
+    console.log(null != 0);   //true
+    console.log(null !== 0);  //true
+    // Нестрогие равенства и неравенства не преобразуют null, приравнивая его к undefined.
+    // Сравнения преобразуют null в число, рассматривая его как 0.
+
+
+    // Задача 8. С помощью рекурсии организовать функцию возведения числа в степень.
+    // Формат: function power(val, pow), где val – заданное число, pow – степень.
+
+    function power(val, pow) {
+        var result = val;
+        if (pow > 1) {
+        return result * power(val, pow - 1);
+        }
+        return result
+    }
+
+    console.log(power(2, 8))
+</script>
+</body>
+</html>
+
