@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3</title>
+</head>
+<body>
+<script>
+    'use strict';
+    //Задача 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+    var start_num = 0;
+    var end_num = 100;
+
+    while (start_num <= end_num) {
+        if (start_num === 2 || start_num === 3 || start_num === 5 || start_num === 7) {
+            console.log (start_num++);
+        }
+        else if (start_num === 0 || start_num === 1) {
+            start_num++;
+            continue;
+        }
+        else if (Number.isInteger(start_num / 2) === true || Number.isInteger(start_num / 3) === true || Number.isInteger(start_num / 5) === true || Number.isInteger(start_num / 7) === true) {
+            start_num++;
+            continue;
+        }
+        else {
+            console.log (start_num++);
+        }
+    }
+
+    //Задача 2. С этого урока начинаем работать с функционалом интернет-магазина.
+    //Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+    //Товары в корзине хранятся в массиве. Задачи:
+    //a) Организовать такой массив для хранения товаров в корзине;
+    //b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+    const cart = [
+        ['smart_home_center', 2500, 1],
+        ['motion_sensor', 700, 7],
+        ['temperature_sensor', 500, 5],
+        ['smart_socket', 1000, 3],
+        ['smart_lamp', 500, 10],
+    ]
+
+    function countBasketPrice (arr) {
+        var sum_price = 0
+        for (let i = 0; i < arr.length; i++) {
+        sum_price += arr[i][1] * arr[i][2]
+        console.log(`${arr[i][2]} x ${arr[i][0]} = ${arr[i][1] * arr[i][2]} руб.`)
+        }
+        console.log(`Итого = ${sum_price}`)
+    }
+
+    countBasketPrice (cart)
+
+    //Задача 3. Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.
+    //Выглядеть это должно так:
+    //for(…){// здесь пусто}
+
+    for (let i = 0; i <= 9; console.log(i), i++) {}
+
+    //Задача 4. Нарисовать пирамиду с помощью console.log, как показано на рисунке,
+    //только у вашей пирамиды должно быть 20 рядов, а не 5.
+    //x
+    //xx
+    //xxx
+    //xxxx
+    //xxxxx
+
+    for (let i = 1; i < 20 + 1; i++) {
+        console.log('х'.repeat(i))
+    }
+</script>
+</body>
+</html>
+
