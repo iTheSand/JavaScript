@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+</head>
+<body>
+<script>
+    'use strict';
+    //Задание 1. Написать функцию, преобразующую число в объект.
+    //Передавая на вход число от 0 до 999, мы должны получить на выходе объект,
+    //в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+    //Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+    //Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+    function num_in_obj (num) {
+        var myObj = new Object();
+        const name_num = [
+        ['единицы'],
+        ['десятки'],
+        ['сотни'],
+        ]
+        if (num > 999 || num < 0) {
+        console.log ('Введите число от 0 до 999!')
+        console.log (myObj)
+        }
+        else {
+        for (let i = 0; i <= 2; i++) {
+        myObj[name_num[i]] = Math.floor(num % 10)
+        num /= 10
+        }
+        console.log (myObj)
+        }
+    }
+
+    num_in_obj (719)
+
+    //Задание 2. Продолжить работу с интернет-магазином:
+    //- В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+    //- Реализуйте такие объекты.
+    //- Перенести функционал подсчета корзины на объектно-ориентированную базу.
+
+    const Basket = {
+    goods: [
+      {
+        id_product: 77901,
+        product_name: "Блок управления умным домом",
+        price: 2500,
+        quantity: 1
+      },
+      {
+        id_product: 77950,
+        product_name: "Датчик движения",
+        price: 700,
+        quantity: 7
+      },
+      {
+        id_product: 77951,
+        product_name: "Датчик температуры",
+        price: 500,
+        quantity: 5
+      },
+      {
+        id_product: 77952,
+        product_name: "Умная розетка",
+        price: 1000,
+        quantity: 3
+      },
+      {
+        id_product: 77960,
+        product_name: "Умная лампа",
+        price: 500,
+        quantity: 10
+      }
+    ],
+    countBasketPrice() {
+      return this.goods.reduce((totalPrice, cartItem) => totalPrice += cartItem.price * cartItem.quantity, 0);
+    }
+    };
+
+    console.log(Basket.countBasketPrice());
+</script>
+</body>
+</html>
