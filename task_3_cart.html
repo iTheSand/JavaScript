@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+    <div class="cart"></div>
+    <script>
+        'use strict';
+        const Basket = {
+            goods: [
+              {
+                id_product: 77901,
+                product_name: "Блок управления умным домом",
+                price: 2500,
+                quantity: 1
+              },
+              {
+                id_product: 77950,
+                product_name: "Датчик движения",
+                price: 700,
+                quantity: 7
+              },
+              {
+                id_product: 77951,
+                product_name: "Датчик температуры",
+                price: 500,
+                quantity: 5
+              },
+              {
+                id_product: 77952,
+                product_name: "Умная розетка",
+                price: 1000,
+                quantity: 3
+              },
+              {
+                id_product: 77960,
+                product_name: "Умная лампа",
+                price: 500,
+                quantity: 10
+              }
+            ],
+            countBasketPrice() {
+              return this.goods.reduce((totalPrice, cartItem) => totalPrice += cartItem.price * cartItem.quantity, 0);
+            },
+            countBasketItem() {
+              return this.goods.reduce((totalItem, cartItem) => totalItem += cartItem.quantity, 0);
+            }
+            };
+
+            if (Basket.countBasketPrice() == 0)
+            {document.querySelector('div.cart').insertAdjacentHTML('beforeend', '<h1>Корзина пуста</h1>');}
+            else {document.querySelector('div.cart').insertAdjacentHTML
+            ('beforeend', `<h1>В корзине: ${Basket.countBasketItem()} товаров на сумму ${Basket.countBasketPrice()} рублей</h1>`);}
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!--Задание 1. Создать функцию, генерирующую шахматную доску. -->
+<!--При этом можно использовать любые html-теги по своему желанию. -->
+<!--Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки. -->
+<!--Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F, G, H.-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>chess</title>
+        <script>
+            var black_field = document.createElement("IMG");
+            black_field.src = "https://i.ibb.co/5snPDX6/1.png";
+
+            var white_field = document.createElement("IMG");
+            white_field.src = "https://i.ibb.co/252Xdjs/2.png";
+
+            var vertical_bord = document.createElement("IMG");
+            vertical_bord.src = "https://i.ibb.co/vwWz9xH/3.png";
+
+            var horizontal_bord = document.createElement("IMG");
+            horizontal_bord.src = "https://i.ibb.co/09mnMbN/4.png";
+        </script>
+    </head>
+    <body>
+    <div>
+        <canvas id="chess" width=640 height=640></canvas>
+        <script src="./task_1_chess_script.js"></script><script src="./task_1_chess_playgr.js"></script>
+    </div>
+    <input type="button" value="Перезагрузить страницу" onClick="window.location.reload()">
+    </body>
+</html>
