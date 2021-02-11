@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>catalog and cart</title>
+    <script src="./catalog_and_cart.js" defer></script>
+    <style>
+        .good {
+            border: 1px solid #000;
+            margin-bottom: 5px;
+            background: #ccc;
+        }
+
+        .prod {
+            width: 400px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+            background: #abe8ac;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+
+        .catalog-list {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+<h3>КАТАЛОГ:</h3>
+<div class="catalog-list"></div>
+
+<details>
+    <summary><b>КОРЗИНА:</b></summary>
+    <div class="cart"></div>
+    <button class="cart-buy">Оформить заказ</button>
+    <button class="cart-btn">Очистить корзину</button>
+</details>
+</body>
+</html>
